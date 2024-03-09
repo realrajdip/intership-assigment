@@ -1,0 +1,49 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+.footer {
+  background-color: $color-grey-950;
+  padding-top: 5rem;
+  padding-bottom: 10rem;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 4rem;
+
+    @include respond(phone) {
+      gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(tab-port) {
+      grid-template-columns: repeat(2, 1fr) 0.7fr;
+    }
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond(small-desktop) {
+      grid-template-columns: repeat(2, 1fr) 1.5fr;
+    }
+  }
+
+  &__country {
+    @include fontTiny;
+    position: relative;
+    color: $color-grey-100;
+
+    & svg {
+      stroke: $color-grey-70;
+    }
+
+    &--btnContainer {
+      @include respond(tab-port) {
+        position: absolute;
+        top: 35%;
+        left: 20%;
+      }
+    }
+  }
+}

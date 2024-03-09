@@ -1,0 +1,37 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+.description {
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+
+  @include respond(phone) {
+    padding: 1rem 2rem;
+  }
+
+  @include respond(small-desktop) {
+    padding: 1rem 0;
+  }
+
+  &__detail {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.discount {
+  @include fontTiny;
+  @include center;
+  width: fit-content;
+  color: $color-blue-dark;
+  background-color: $color-blue-light;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+
+  @include respond(small-desktop) {
+    margin: 5px 0;
+  }
+}

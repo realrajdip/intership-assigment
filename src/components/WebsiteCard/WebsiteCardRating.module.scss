@@ -1,0 +1,84 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+.rating {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 1.4rem;
+
+  &__ratings {
+    background-color: $color-blue-lighter;
+    color: $color-blue-dark;
+
+    border-radius: 1.2rem;
+    padding: 0.5rem;
+
+    position: absolute;
+    top: 0.8%;
+    right: 1.5%;
+
+    @include respond(small-desktop) {
+      position: static;
+      padding: 2rem 3rem;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    &--rating {
+      @include fontMd;
+      font-weight: 700;
+
+      @include respond(small-desktop) {
+        font-weight: 400;
+        @include fontXl(1.5);
+      }
+    }
+
+    &--status {
+      @include fontTiny;
+
+      @include respond(small-desktop) {
+        margin-bottom: 3px;
+        @include fontXs;
+      }
+    }
+
+    &--stars {
+      color: $color-yellow;
+
+      & svg {
+        height: 1.4rem;
+        width: 1.4rem;
+
+        @include respond(small-desktop) {
+          height: 1.6rem;
+          width: 1.6rem;
+        }
+      }
+    }
+  }
+}
+
+.btnContainer {
+  // background-color: aqua;
+  align-self: flex-start;
+  width: 50%;
+  padding: 1rem 2rem;
+
+  @include respond(tab-port) {
+    width: 40%;
+  }
+
+  @include respond(tab-land) {
+    width: 30%;
+  }
+
+  @include respond(small-desktop) {
+    // padding: 1rem 2rem;
+    width: 100%;
+  }
+}
